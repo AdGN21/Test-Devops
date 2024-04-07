@@ -20,7 +20,7 @@ Dentro de contents y contents2 dejaremos los archivos index.html (Que en este ca
 
 Volveremos con cd .. al directorio webserver
 
-Dentro del dirrectorio webserver deberemos crear un archivo llamado docker-compose.yml.
+Dentro del directorio webserver deberemos crear un archivo llamado docker-compose.yml.
 
 De esta forma tendremos que tener dentro del directorio webserver el archivo docker-compose.yml y los 3 subdirectorios de nginx, contents y contents2.
 
