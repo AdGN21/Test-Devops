@@ -3,6 +3,9 @@ Como crear dos servidores web en docker y un proxy inverso que balancee la carga
 Primero creamos con el comando mkdir un directorio que alojará las configuraciones estáticas de nuestros servidores y proxy inverso.
 
 mkdir webserver
+
+Nos movemos al directorio 
+
 cd webserver
 
 Una vez dentro del directorio que acabamos de crear crearemos 3 subdirectorios más que alojarán el contenido estático de los dos servidores web y el proxy inverso.
@@ -11,12 +14,16 @@ mkdir nginx
 mkdir contents
 mkdir contents2
 
-Dentro de nginx alojaremos el archivo nginx.conf
-Dentro de contents y contents2 dejaremos los archivos index.html
+Dentro de nginx alojaremos el archivo nginx.conf en el cual definiremos: el número máximo de conexiones (opcional), le indicaremos el puerto de escucha (el 80 en este caso), le indicaremos los distintos servicios que tiene que balancear y el puerto de escucha (en este caso son webserver1:80 y webserver2:80)
+
+Dentro de contents y contents2 dejaremos los archivos index.html (Que en este caso son dos archvios con un title y un h1 que indican que esto es una prueba en el servidor 1 y servidor 2)
 
 Volveremos con cd .. al directorio webserver
 
 Dentro del dirrectorio webserver deberemos crear un archivo llamado docker-compose.yml.
+
 De esta forma tendremos que tener dentro del directorio webserver el archivo docker-compose.yml y los 3 subdirectorios de nginx, contents y contents2.
 
-Después bastará con acceder a la ip de nuestro servidor indicando el puerto 8555 y si refrescamos veremos que cambia el contenido y que hace balanceo de carga.
+Despúués deberemos realizar el comando docker-compose up -d para levantar los 3 contenendores de docker.
+
+Por último bastará con acceder a la ip de nuestro servidor indicando el puerto 8555 y si refrescamos veremos que cambia el contenido y que hace balanceo de carga entre los dos servidores web.
