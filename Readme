@@ -24,6 +24,8 @@ Dentro del dirrectorio webserver deberemos crear un archivo llamado docker-compo
 
 De esta forma tendremos que tener dentro del directorio webserver el archivo docker-compose.yml y los 3 subdirectorios de nginx, contents y contents2.
 
-Despúués deberemos realizar el comando docker-compose up -d para levantar los 3 contenendores de docker.
+Después deberemos realizar el comando docker-compose up -d para levantar los 3 contenendores de docker.
 
-Por último bastará con acceder a la ip de nuestro servidor indicando el puerto 8555 y si refrescamos veremos que cambia el contenido y que hace balanceo de carga entre los dos servidores web.
+Por último bastará con acceder en un navegador a la ip de nuestro servidor indicando el puerto 8555 y si refrescamos veremos que cambia el contenido y que hace balanceo de carga entre los dos servidores web.
+
+Utilizando los comandos dokcer stop "nombre_de_contenedor" y docker start podremos parar e iniciar los contenedores que deseemos
